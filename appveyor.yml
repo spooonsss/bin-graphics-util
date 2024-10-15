@@ -1,0 +1,11 @@
+image:
+  - Visual Studio 2022
+
+install:
+  - 'C:\Python310\python.exe -m pip install -U pywin32 pyinstaller Pillow'
+build_script:
+  - 'C:\Python310\scripts\pyinstaller -F --exclude-module select --exclude-module _bz2 --exclude-module _decimal --exclude-module _lzma  --exclude-module _socket  --icon=bin_composite.ico bin_composite.py'
+  - 'C:\Python310\scripts\pyinstaller -F --exclude-module select --exclude-module _bz2 --exclude-module _decimal --exclude-module _lzma  --exclude-module _socket  --icon=bin_roll.ico bin_roll.py'
+  - 'sha1sum dist/*.exe'
+artifacts:
+  - path: 'dist/*exe'
