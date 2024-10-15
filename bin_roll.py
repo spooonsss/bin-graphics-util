@@ -136,8 +136,8 @@ def composite(input_filename1, input_filename2, output_filename, bpp, width, hei
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('bin_roll', 'Shifts pixels in a SNES .bin file, copying the pixels shifted out of the image to the other end')
-    parser.add_argument('-x', type=int, default=0, help='shift to the left this number of pixels')
-    parser.add_argument('-y', type=int, default=0, help='shift up this number of pixels')
+    parser.add_argument('-x', type=int, default=0, help='shift to the left this number of pixels (negative numbers shift right)')
+    parser.add_argument('-y', type=int, default=0, help='shift up this number of pixels (negative numbers shift down)')
     parser.add_argument('--width', type=int, default=16, help='width of input file in number of 8x8 tiles (default 16)')
     parser.add_argument('--height', type=int, default=8, help='height of input file in number of 8x8 tiles (default 8)')
     parser.add_argument('input_filename')
